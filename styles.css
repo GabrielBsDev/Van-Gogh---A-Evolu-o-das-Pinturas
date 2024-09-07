@@ -1,0 +1,138 @@
+/* Reset de estilos básicos */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações gerais do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilo principal do carrossel */
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* Contêiner das imagens do carrossel */
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada item do carrossel */
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    overflow: hidden; /* Oculta qualquer conteúdo que saia da área definida */
+}
+
+/* Estilo das imagens */
+.carousel-item img {
+    width: 400%;
+    height: 600px; /* Altura fixa para padronizar o tamanho */
+    object-fit: cover; /* Garante que a imagem preencha o contêiner sem distorção */
+    border-radius: 10px;
+}
+
+/* Estilo das descrições */
+.carousel-item p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Descrição da imagem (visível ao passar o mouse) */
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente */
+    color: #f2f2f2; /* Cor da fonte clara */
+    font-family: 'Georgia', serif; /* Fonte elegante */
+    font-size: 30x;
+    transition: all 0.3s ease-in-out; /* Transição suave para todas as propriedades */
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Eleva ligeiramente a descrição */
+}
+
+
+
+/* Exibe a descrição ao passar o mouse sobre a imagem */
+.carousel-item:hover .description {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Botões de navegação */
+button.prev, button.next {
+    position: absolute;
+    top: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transform: translateY(-50%);
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* Botão de navegação anterior */
+button.prev {
+    position: absolute;
+    left: 1080px;
+
+}
+
+/* Botão de navegação seguinte */
+button.next {
+    right: 30px;
+}
+
+/* Estilo dos botões em hover */
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Estilo dos botões em foco (opcional) */
+button.prev:focus, button.next:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 120, 255, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 1000px) {
+    .carousel {
+        width: 100%;
+    }
+    
+    .carousel-item p {
+        font-size: 14px;
+    }
+
+    .carousel-item img {
+        height: 700px; /* Ajuste a altura das imagens em telas menores, se necessário */
+    }
+}
